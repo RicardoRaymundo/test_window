@@ -5,7 +5,6 @@ import 'answer_button.dart';
 import 'data_list.dart';
 
 class TestPage extends StatelessWidget {
-
   List<Answer> listAnswer = [
     Answer(
       id: 'bbbb',
@@ -73,25 +72,20 @@ class TestPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size screenSize = MediaQuery
-        .of(context)
-        .size;
+    Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      body: SingleChildScrollView(
-        child:Container(
-          color: Color.fromRGBO(250, 0, 0, 0.5),
-          height: screenSize.height,
-          width: screenSize.width,
-          child: Padding(
+      body: Container(
+        color: Color(0xffff0000),
+        child: SafeArea(
+          child: ListView(
             padding: EdgeInsets.all(10.0),
-            child: SafeArea(
-              child: Container(
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.all(10.0),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5.0),
                   color: Color(0xff363636),
                 ),
-                height: screenSize.height * 0.7,
-                width: screenSize.width * 0.8,
                 child: Column(
                   children: <Widget>[
                     Row(
@@ -141,21 +135,27 @@ class TestPage extends StatelessWidget {
                             color: Color(0xff8cc53f),
                           ),
                         ),
-                        SizedBox(height: 10,),
+                        SizedBox(
+                          height: 10,
+                        ),
                         Image.asset('assets/trophy.png'),
-                        SizedBox(height: 20,),
+                        SizedBox(
+                          height: 20,
+                        ),
                         Text(
                           'O que é futurismo?',
                           style: TextStyle(fontSize: 25, color: Colors.white),
                         ),
-                        SizedBox(height: 10,),
+                        SizedBox(
+                          height: 10,
+                        ),
                         this._groupButton()
                       ],
                     ),
                   ],
                 ),
-              ),
-            ),
+              )
+            ],
           ),
         ),
       ),
