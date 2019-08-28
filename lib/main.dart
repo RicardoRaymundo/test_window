@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'test_page.dart';
+import 'package:test_window/exam/exam_question.dart';
 import 'package:test_window/app/app_behavior.dart';
+import 'package:test_window/exam/exam_try_again.dart';
+
 
 void main() => runApp(App());
 
@@ -16,7 +18,7 @@ class App extends StatelessWidget {
         );
       },
       theme: ThemeData(),
-      home: TestPage(),
+      home: ExamTryAgain(),
     );
   }
 }

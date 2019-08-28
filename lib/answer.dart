@@ -1,7 +1,6 @@
-class Answer {
-  String id;
+class CustomButtonConfig {
   bool isCorrect;
   String text;
 
-  Answer({this.id, this.text, this.isCorrect});
+  CustomButtonConfig({this.text, this.isCorrect});
 }

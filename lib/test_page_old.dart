@@ -1,60 +1,52 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'answer.dart';
-import 'answer_button.dart';
+import 'custom_button.dart';
 import 'data_list.dart';
 
 class TestPage extends StatelessWidget {
-  List<Answer> listAnswer = [
-    Answer(
-      id: 'bbbb',
+  List<CustomButtonConfig> listCustomButtonConfig = [
+    CustomButtonConfig(
       text: 'Uma espécie rara de peixe?',
       isCorrect: false,
     ),
-    Answer(
-      id: 'aaaa',
+    CustomButtonConfig(
       text: 'Uma Árvore?',
       isCorrect: false,
     ),
-    Answer(
-      id: 'cccc',
+    CustomButtonConfig(
       text: 'A ciencia que estuda as projeções do futuro?',
       isCorrect: true,
     ),
-    Answer(
-      id: 'dddd',
+    CustomButtonConfig(
       text: 'Peça de um computador?',
       isCorrect: false,
     ),
-    Answer(
-      id: 'bbbb',
+    CustomButtonConfig(
       text: 'Uma espécie rara de peixe?',
       isCorrect: false,
     ),
-    Answer(
-      id: 'bbbb',
+    CustomButtonConfig(
       text: 'Uma espécie rara de peixe?',
       isCorrect: false,
     ),
-    Answer(
-      id: 'bbbb',
+    CustomButtonConfig(
       text: 'Uma espécie rara de peixe?',
       isCorrect: false,
     ),
-    Answer(
-      id: 'bbbb',
+    CustomButtonConfig(
       text: 'Uma espécie rara de peixe?',
       isCorrect: false,
     ),
   ];
 
   // Carrega o conteudo da API
-  Future<List<Answer>> fetchAnswers() async {
-    return await this.listAnswer;
+  Future<List<CustomButtonConfig>> fetchAnswers() async {
+    return await this.listCustomButtonConfig;
   }
 
   Widget _groupButton() {
-    return FutureBuilder<List<Answer>>(
+    return FutureBuilder<List<CustomButtonConfig>>(
       // A future é o processamento do json do servidor
       // Recebe List<JsonData>
       future: this.fetchAnswers(),
@@ -64,7 +56,7 @@ class TestPage extends StatelessWidget {
 
         // Mostra tela de carregamento até o fim do processamento dos dados
         return snapshot.hasData
-            ? DataList(dataAnswer: snapshot.data)
+            ? DataList(dataCustomButtonConfig: snapshot.data)
             : Center(child: CircularProgressIndicator());
       },
     );
